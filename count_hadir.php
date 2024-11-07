@@ -1,7 +1,7 @@
 <?php
-$servername = "mysql-1c680404-kad-kahwin-nadiah.j.aivencloud.com:26442";
-$username = "avnadmin";
-$password = "AVNS_tPe5EFnjEw1LpB_-559";
+$servername = "127.0.0.1:3306";
+$username = "root";
+$password = "";
 $database = "kad_kahwin";
 
 $connection = mysqli_connect($servername, $username, $password);
