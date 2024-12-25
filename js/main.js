@@ -174,7 +174,7 @@ function addAppleCalendar() {
 function openGoogleMaps() {
     const latitude = 4.226058186123785;  // Example latitude
     const longitude = 101.22905188341969;  // Example longitude
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&travelmode=driving`;
+    const googleMapsUrl = `https://www.google.com/maps/place/6%C2%B007'42.8%22N+102%C2%B010'18.7%22E/@6.128555,102.1692861,17z/data=!3m1!4b1!4m4!3m3!8m2!3d6.128555!4d102.171861?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D`;
 
     window.open(googleMapsUrl, "_blank");  // Open in a new tab
 }
@@ -182,8 +182,7 @@ function openGoogleMaps() {
 function openWaze() {
     const latitude = 4.226058186123785;  // Example latitude
     const longitude = 101.22905188341969;  // Example longitude
-    //const wazeUrl = `https://waze.com/ul?ll=${latitude},${longitude}&navigate=yes`;
-    const wazeUrl = `waze://?ll=${latitude},${longitude}&navigate=yes`
+    const wazeUrl = `https://waze.com/ul/hw30dugxkz`;
 
     window.open(wazeUrl, "_blank");  // Open in a new tab
 }

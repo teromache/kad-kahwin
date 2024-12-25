@@ -291,7 +291,7 @@ if (mysqli_num_rows($query2) == 0) {
         <div class="location">
             <h1>Lokasi</h1>
             <p>1595 Lorong Muhibbah 16</p>
-            <p>Kampung Tersusun Muhibbah Batu 33</p>
+            <p>Kampung Tersusun Muhibbah Batu 33</p> 
             <p>35350 Temoh, Perak</p>
             <div class="button" onclick="openGoogleMaps()">
                 <button class="google">
