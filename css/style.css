@@ -334,9 +334,10 @@ section {
 .card section.info .event-info .four p,
 .card section.info .event-info .five p {
     color: #111111;
-    font-weight: 300;
-    font-size: 14px;
     letter-spacing: 1px;
+    font-weight: 600; /* Thicker font weight for better visibility */
+    font-size: 14px; /* Slightly larger font size */
+    letter-spacing: 1px; /* Keep spacing for clarity */
 }
 
 .card section.info .event-info .one .parent {
