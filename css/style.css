@@ -46,7 +46,7 @@ body {
     justify-content: center;
     align-items: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background-image: url('../images/intro2-bg.jpeg');
+    background-image: url('../images/intro3-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -227,7 +227,7 @@ section {
     # Intro
 ============================================================================================*/
 .card section.intro {
-    background: url(../images/intro2-bg.jpeg), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
+    background: url(../images/intro3-bg.jpg), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
