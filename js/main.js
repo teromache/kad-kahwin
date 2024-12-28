@@ -6,7 +6,7 @@
 //     const overlay = document.getElementById("overlay");
 //     overlay.style.display = "none";
 
-    // Play the audio
+// Play the audio
 //    const audioPlayer = document.getElementById("audio-player");
 //    audioPlayer.play();  // Start playing the audio
 // });
@@ -294,12 +294,8 @@ const toggleButtons = {
     'calendar-btn': 'calendar-menu',
     'location-btn': 'location-menu',
     'music-btn': 'music-menu',
-    'rsvp-btn': 'rsvp-menu',
-    'ucapan-btn': 'ucapan-menu',
     'contact-btn': 'contact-menu',
-    'kehadiran-btn': 'rsvp-menu',
-    'btn-hadir': 'success-menu'
-    // Add other button-to-menu mappings here
+    // Ensure only existing button-to-menu mappings are here
 };
 
 // Function to toggle a menu open/close
@@ -320,7 +316,7 @@ function toggleMenu(menuId, event) {
 function closeAllMenus() {
     for (const menuId of Object.values(toggleButtons)) {
         const menu = document.getElementById(menuId);
-        if (menu.classList.contains('open')) {
+        if (menu && menu.classList.contains('open')) {
             menu.classList.remove('open'); // Close the menu
         }
     }
@@ -329,7 +325,9 @@ function closeAllMenus() {
 // Add click event listeners to all toggle buttons
 for (const [buttonId, menuId] of Object.entries(toggleButtons)) {
     const button = document.getElementById(buttonId);
-    button.addEventListener('click', (event) => toggleMenu(menuId, event));
+    if (button) {
+        button.addEventListener('click', (event) => toggleMenu(menuId, event));
+    }
 }
 
 // Add a global click handler to close all menus when clicking outside
@@ -382,28 +380,28 @@ document.getElementById("form-ucapan").addEventListener("submit", function (even
         method: "POST", // Use the POST method to submit data
         body: formData, // Attach the FormData object
     })
-    .then(response => {
-        if (response.ok) {
-            return response.text(); // Process the response as text
-        } else {
-            throw new Error("Form submission failed"); // Handle errors
-        }
-    })
-    .then(result => {
-        // Display the success message in the success-menu
-        const successMenu = document.getElementById("success-menu");
-        successMenu.innerHTML = "<div class='success-message'><i class='bx bx-check'></i><p>Mesej anda berjaya dihantar!</p></div>";
-        successMenu.classList.add("open"); // Open the success menu
+        .then(response => {
+            if (response.ok) {
+                return response.text(); // Process the response as text
+            } else {
+                throw new Error("Form submission failed"); // Handle errors
+            }
+        })
+        .then(result => {
+            // Display the success message in the success-menu
+            const successMenu = document.getElementById("success-menu");
+            successMenu.innerHTML = "<div class='success-message'><i class='bx bx-check'></i><p>Mesej anda berjaya dihantar!</p></div>";
+            successMenu.classList.add("open"); // Open the success menu
 
-        // Close the ucapan menu after successful submission
-        closeMenu('ucapan-menu');
+            // Close the ucapan menu after successful submission
+            closeMenu('ucapan-menu');
 
-        // Optionally reset the form
-        form.reset();
-    })
-    .catch(error => {
-        console.error("Error:", error); // Log any errors
-    });
+            // Optionally reset the form
+            form.reset();
+        })
+        .catch(error => {
+            console.error("Error:", error); // Log any errors
+        });
 });
 
 
@@ -420,41 +418,41 @@ function incrementCount(endpoint, successMessage, iconClass, closeMenuId) {
         },
         body: 'action=increment',
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error("Request failed");
-        }
-    })
-    .then(data => {
-        if (data.attend) {
-            // Display the success message
-            const successMenu = document.getElementById("success-menu");
-            successMenu.innerHTML = `<div class='success-message'><i class='${iconClass}'></i><p>${successMessage}</p></div>`;
-            successMenu.classList.add("open"); // Open the success menu
-
-            // Optionally close other menu
-            if (closeMenuId) {
-                closeMenu(closeMenuId); // Close the specified menu
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error("Request failed");
             }
-        } else {
-            console.error("Increment count error:", data.error);
-            alert("Terjadi kesilapan: " + data.error);
-        }
-    })
-    .catch(error => {
-        console.error("AJAX error:", error);
-        alert("Error processing the request.");
-    });
+        })
+        .then(data => {
+            if (data.attend) {
+                // Display the success message
+                const successMenu = document.getElementById("success-menu");
+                successMenu.innerHTML = `<div class='success-message'><i class='${iconClass}'></i><p>${successMessage}</p></div>`;
+                successMenu.classList.add("open"); // Open the success menu
+
+                // Optionally close other menu
+                if (closeMenuId) {
+                    closeMenu(closeMenuId); // Close the specified menu
+                }
+            } else {
+                console.error("Increment count error:", data.error);
+                alert("Terjadi kesilapan: " + data.error);
+            }
+        })
+        .catch(error => {
+            console.error("AJAX error:", error);
+            alert("Error processing the request.");
+        });
 }
 
 // Attach the click event to the "Hadir" and "Tidak Hadir" buttons
-document.getElementById("btn-hadir").onclick = function() {
+document.getElementById("btn-hadir").onclick = function () {
     incrementCount('count_hadir.php', "Kami menantikan kedatangan anda!", 'bx bxs-wink-smile', 'rsvp-menu'); // Success message and optionally close RSVP menu
 };
 
-document.getElementById("btn-tidak-hadir").onclick = function() {
+document.getElementById("btn-tidak-hadir").onclick = function () {
     incrementCount('count_tidak_hadir.php', "Maaf, mungkin lain kali.", 'bx bxs-sad', 'rsvp-menu'); // Success message and optionally close RSVP menu
 };
 

@@ -154,7 +154,8 @@
                 </div>
             </div>
             <img src="./images/divider.png" alt="" class="divider reveal fade-bottom">
-            <div class="rsvp">
+            <br><br>
+            <!-- <div class="rsvp">
                 <h2 class="reveal fade-bottom">Ucapan</h2>
                 <div class="container-message reveal fade-bottom">
                     <div class="content">
@@ -224,14 +225,14 @@
                         <span>Berikan Ucapan</span>
                     </button>
                 </div>
-            </div>
+            </div> -->
         </section>
         <section class="footer">
             <ul class="menu">
                 <li id="calendar-btn"><i class='bx bx-calendar'></i></li>
                 <li id="location-btn"><i class='bx bx-map'></i></li>
                 <li id="music-btn"><i class='bx bx-music'></i></li>
-                <li id="rsvp-btn"><i class='bx bx-envelope'></i></li>
+                <!-- <li id="rsvp-btn"><i class='bx bx-envelope'></i></li>   -->
                 <li id="contact-btn"><i class='bx bx-phone'></i></li>
             </ul>
         </section>
@@ -337,46 +338,6 @@
         </div>
     </div>
 
-    <div id="rsvp-menu" class="toggle-menu">
-        <div class="rsvp">
-            <h1>Kehadiran</h1>
-            <div class="button">
-                <button type="button" id="btn-hadir">
-                    <i class='bx bx-check'></i>
-                    <span>Hadir</span>
-                </button>
-                <button type="button" id="btn-tidak-hadir">
-                    <i class='bx bx-x'></i>
-                    <span>Tidak Hadir</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="ucapan-menu" class="toggle-menu">
-        <div class="ucapan-tetamu">
-            <h1>Sampaikan Ucapan</h1>
-            <form id="form-ucapan" class="form-ucapan" action="insert_message.php" method="POST">
-                <label for="name">Nama Anda</label>
-                <input type="text" name="name" placeholder="Hazmi Hazim" required>
-
-                <label for="ucapan">Ucapan</label>
-                <textarea name="message" id="ucapan" cols="30" rows="10" placeholder="Selemat pengantin baru..."
-                    required></textarea>
-
-                <div class="button">
-                    <button type="submit" class="hantar" id="hantar">
-                        <i class='bx bxs-paper-plane'></i>
-                        <span>Hantar</span>
-                    </button>
-                    <button class="tutup">
-                        <i class='bx bx-x'></i>
-                        <span>Tutup</span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
     <!-- This container will hold the success message and will be dynamically populated -->
     <div id="success-menu" class="toggle-menu"></div>
 
