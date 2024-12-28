@@ -286,13 +286,14 @@ section {
     # Event Info
 ============================================================================================*/
 .card section.info {
+    background: url(../images/intro3-bg.jpg), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
     padding: 50px 0px;
-    background: linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
+    /* background: linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF); */
     min-height: 100vh;
 }
 
