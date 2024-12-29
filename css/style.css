@@ -294,7 +294,7 @@ section {
     padding: 50px 0px;
     /* background: linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF); */
     min-height: 100vh;
-    background: url(../images/intro3-bg.jpg), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
+    background: url(../images/intro3-sec2-bg.jpg), linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
 }
 
 .card section.info .assalamualaikum {
